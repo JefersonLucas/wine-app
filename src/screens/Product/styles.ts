@@ -8,8 +8,8 @@ export const Container = styled.View`
 `;
 
 export const Text = styled.Text`
+  font-family: ${({ theme }) => theme.fonts.family.bold};
   font-size: ${({ theme }) => theme.fonts.size.xxl};
-  font-weight: ${({ theme }) => theme.fonts.weight.bold};
   line-height: ${({ theme }) => theme.fonts.lineHeight.xl};
   color: ${({ theme }) => theme.colors.text.primary};
 `;
