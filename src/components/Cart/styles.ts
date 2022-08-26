@@ -23,7 +23,7 @@ export const Oval = styled.View`
   align-items: center;
   justify-content: center;
 
-  background: ${({ theme }) => theme.colors.background.tertiary};
+  background: ${({ theme }) => theme.colors.background.quarternary};
 `;
 
 export const Count = styled.Text`

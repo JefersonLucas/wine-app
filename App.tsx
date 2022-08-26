@@ -4,6 +4,7 @@ import {
   useFonts,
   Lato_700Bold,
   Lato_400Regular,
+  Lato_300Light,
 } from "@expo-google-fonts/lato";
 
 import { Product } from "./src/screens/Product";
@@ -15,6 +16,7 @@ export default function App() {
   const [fontsLoaded] = useFonts({
     Lato_700Bold,
     Lato_400Regular,
+    Lato_300Light,
   });
 
   if (!fontsLoaded) {

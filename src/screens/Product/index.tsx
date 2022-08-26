@@ -1,12 +1,13 @@
 import { Header } from "../../components/Header";
-import { Container, Content, Text } from "./styles";
+import { ProductFullContent } from "../../components/Products/ProductFullContent";
+import { Container, Content } from "./styles";
 
 export function Product() {
   return (
     <Container>
       <Header totalItems={0} />
       <Content>
-        <Text>Product</Text>
+        <ProductFullContent />
       </Content>
     </Container>
   );

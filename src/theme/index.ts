@@ -3,11 +3,13 @@ export default {
     background: {
       primary: "#EAEAEA",
       secondary: "#F2F2F2",
-      tertiary: "#FFFFFF",
+      tertiary: "#F5F5F5",
+      quarternary: "#FFFFFF",
     },
 
     status: {
       info: "#F28D52",
+      chenin: "#F26649",
       alert: "#F5B554",
       success: "#82BF45",
       danger: "#DE3838",
@@ -18,7 +20,7 @@ export default {
       secondary: "#333333",
       tertiary: "#555555",
       light: "#FFFFFF",
-      wine: "#BF1B75",
+      wine: "#C81A78",
       chardonnay: "#00B495",
     },
   },
@@ -26,6 +28,7 @@ export default {
     family: {
       bold: "Lato_700Bold",
       regular: "Lato_400Regular",
+      normal: "Lato_300Light",
     },
 
     size: {
