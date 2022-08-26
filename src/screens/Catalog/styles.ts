@@ -7,9 +7,10 @@ export const Container = styled.View`
   background-color: ${({ theme }) => theme.colors.background.secondary};
 `;
 
-export const Text = styled.Text`
-  font-family: ${({ theme }) => theme.fonts.family.bold};
-  font-size: ${({ theme }) => theme.fonts.size.xxl};
-  line-height: ${({ theme }) => theme.fonts.lineHeight.xl};
-  color: ${({ theme }) => theme.colors.text.primary};
+export const Content = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  background-color: ${({ theme }) => theme.colors.background.tertiary};
+  z-index: -1;
 `;
