@@ -21,6 +21,11 @@ export default {
     },
   },
   fonts: {
+    family: {
+      bold: "Lato_700Bold",
+      regular: "Lato_400Regular",
+    },
+
     size: {
       xxl: "20px",
       xl: "18px",
@@ -28,11 +33,6 @@ export default {
       md: "14px",
       sm: "12px",
       xs: "10px",
-    },
-
-    weight: {
-      bold: "700",
-      normal: "400",
     },
 
     lineHeight: {
