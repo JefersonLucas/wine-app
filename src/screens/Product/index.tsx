@@ -1,10 +1,9 @@
-import { Text, View } from "react-native";
-import { styles } from "./styles";
+import { Container, Text } from "./styles";
 
 export function Product() {
   return (
-    <View style={styles.container}>
+    <Container>
       <Text>Product</Text>
-    </View>
+    </Container>
   );
 }
