@@ -1,5 +1,4 @@
 import styled from "styled-components/native";
-import cart from "../../assets/img/cart.png";
 import { HeaderProps } from "./types";
 
 export const Container = styled.View<HeaderProps>`
@@ -11,8 +10,8 @@ export const Container = styled.View<HeaderProps>`
   justify-content: space-between;
   background-color: ${({ theme, isBackground }) =>
     isBackground
-      ? theme.colors.background.tertiary
-      : theme.colors.background.primary};
+      ? theme.colors.background.quarternary
+      : theme.colors.background.tertiary};
 
   position: relative;
 `;
