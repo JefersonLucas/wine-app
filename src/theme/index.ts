@@ -10,6 +10,7 @@ export default {
       info: "#F28D52",
       alert: "#F5B554",
       success: "#82BF45",
+      danger: "#DE3838",
     },
 
     text: {
@@ -17,7 +18,8 @@ export default {
       secondary: "#333333",
       tertiary: "#555555",
       light: "#FFFFFF",
-      emphasis: "#BF1B75",
+      wine: "#BF1B75",
+      chardonnay: "#00B495",
     },
   },
   fonts: {
