@@ -3,13 +3,14 @@ import styled from "styled-components/native";
 export const Container = styled.View`
   align-items: center;
   justify-content: space-between;
+  margin: 20px 10px;
 `;
 
 export const Content = styled.View`
   width: 156px;
   height: 348px;
 
-  padding: 15px;
+  padding: 15px 15px 0 15px;
   margin: 10px 0;
 
   border-radius: 4px;
