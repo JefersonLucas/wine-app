@@ -1,4 +1,12 @@
-import { Container, Content, Filter, FoundProducts, List } from "./styles";
+import {
+  Container,
+  Content,
+  Filter,
+  FilterContainer,
+  FoundProducts,
+  List,
+  ListContainer,
+} from "./styles";
 
 import { ProductContent } from "../../components/Products/ProductContent";
 import { Header } from "../../components/Header";
@@ -12,23 +20,27 @@ export function Catalog() {
     <Container>
       <Header totalItems={0} isBackground isLogo elevation={5} />
       <Content>
-        <Filter
-          placeholder="O que você está procurando?"
-          selectionColor={theme.colors.text.wine}
-        />
-        <FoundProducts>
-          {data.length <= 0
-            ? `Nenhum produto encontrado`
-            : data.length === 1
-            ? `${data.length} produto encontrado`
-            : `${data.length} produtos encontrados`}
-        </FoundProducts>
-        <List
-          data={data}
-          keyExtractor={(item) => item}
-          renderItem={() => <ProductContent />}
-          numColumns={2}
-        />
+        <FilterContainer>
+          <Filter
+            placeholder="O que você está procurando?"
+            selectionColor={theme.colors.text.wine}
+          />
+          <FoundProducts>
+            {data.length <= 0
+              ? `Nenhum produto encontrado`
+              : data.length === 1
+              ? `${data.length} produto encontrado`
+              : `${data.length} produtos encontrados`}
+          </FoundProducts>
+        </FilterContainer>
+        <ListContainer>
+          <List
+            data={data}
+            keyExtractor={(item) => item}
+            renderItem={({ item }) => <ProductContent id={item} />}
+            numColumns={2}
+          />
+        </ListContainer>
       </Content>
     </Container>
   );

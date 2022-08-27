@@ -10,9 +10,13 @@ export const Content = styled.View`
   flex: 1;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 40px 20px 20px 20px;
   background-color: ${({ theme }) => theme.colors.background.tertiary};
   z-index: -1;
+`;
+
+export const FilterContainer = styled.View`
+  padding: 40px 20px 0px 20px;
+  width: 100%;
 `;
 
 export const FoundProducts = styled.Text`
@@ -28,7 +32,7 @@ export const Filter = styled.TextInput`
   height: 40px;
   background-color: ${({ theme }) => theme.colors.background.primary};
   border-radius: 4px;
-  padding: 8px;
+  padding: 8px 14px;
 
   font-family: ${({ theme }) => theme.fonts.family.regular};
   font-size: ${({ theme }) => theme.fonts.size.lg};
@@ -36,7 +40,16 @@ export const Filter = styled.TextInput`
   color: ${({ theme }) => theme.colors.text.tertiary};
 `;
 
+export const ListContainer = styled.View`
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex: 1;
+  width: 100%;
+`;
+
 // prettier-ignore
 export const List = styled(FlatList as new (props: FlatListProps<string>) => FlatList<string>)`
   width: 100%;
+  padding: 20px;
 `;
