@@ -39,7 +39,7 @@ export const Name = styled.Text`
 
   font-family: ${({ theme }) => theme.fonts.family.bold};
   font-size: ${({ theme }) => theme.fonts.size.md};
-  line-height: ${({ theme }) => theme.fonts.lineHeight.md};
+  line-height: ${({ theme }) => theme.fonts.lineHeight.sm};
   color: ${({ theme }) => theme.colors.text.primary};
   text-align: center;
 `;
