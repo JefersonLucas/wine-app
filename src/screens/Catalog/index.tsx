@@ -4,6 +4,8 @@ import { ProductContent } from "../../components/Products/ProductContent";
 import { Header } from "../../components/Header";
 import { useTheme } from "styled-components";
 
+const data = ["1", "2", "3", "4"];
+
 export function Catalog() {
   const theme = useTheme();
   return (
@@ -14,9 +16,15 @@ export function Catalog() {
           placeholder="O que você está procurando?"
           selectionColor={theme.colors.text.wine}
         />
-        <FoundProducts>45 produtos encontrados</FoundProducts>
+        <FoundProducts>
+          {data.length <= 0
+            ? `Nenhum produto encontrado`
+            : data.length === 1
+            ? `${data.length} produto encontrado`
+            : `${data.length} produtos encontrados`}
+        </FoundProducts>
         <List
-          data={["1", "2", "3", "4"]}
+          data={data}
           keyExtractor={(item) => item}
           renderItem={() => <ProductContent />}
           numColumns={2}
