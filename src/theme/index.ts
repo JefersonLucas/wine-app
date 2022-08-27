@@ -45,6 +45,7 @@ export default {
       lg: "24px",
       md: "20px",
       sm: "16px",
+      xs: "12px",
     },
   },
 };

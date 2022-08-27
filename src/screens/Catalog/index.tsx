@@ -1,9 +1,15 @@
-import { Container, Text } from "./styles";
+import { Container, Content } from "./styles";
+
+import { ProductContent } from "../../components/Products/ProductContent";
+import { Header } from "../../components/Header";
 
 export function Catalog() {
   return (
     <Container>
-      <Text>Catalog</Text>
+      <Header totalItems={0} isBackground isLogo elevation={5} />
+      <Content>
+        <ProductContent />
+      </Content>
     </Container>
   );
 }
