@@ -18,8 +18,19 @@ import {
 
 import bottleImage from "../../../assets/img/bottle-2.png";
 import stampImage from "../../../assets/img/stamp.png";
+import { useNavigation } from "@react-navigation/native";
 
-export function ProductContent() {
+type ProductContentProps = {
+  id: number;
+};
+
+export function ProductContent({ id }: ProductContentProps) {
+  const navigation = useNavigation();
+
+  function openScreen() {
+    navigation.navigate("product", { id: id });
+  }
+
   return (
     <Container>
       <Content elevation={5}>
@@ -40,7 +51,7 @@ export function ProductContent() {
           <PriceNonMember>Não sócio R$ 37,40</PriceNonMember>
         </Prices>
       </Content>
-      <Buttom activeOpacity={0.7}>
+      <Buttom activeOpacity={0.7} onPress={openScreen}>
         <ButtomText>Adicionar</ButtomText>
       </Buttom>
     </Container>
