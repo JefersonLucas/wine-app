@@ -25,3 +25,7 @@ export const CartContainer = styled.View`
   right: 15px;
   bottom: -10px;
 `;
+
+export const BackButtom = styled.TouchableOpacity`
+  z-index: 100;
+`;

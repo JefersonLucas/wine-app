@@ -1,62 +1,46 @@
-import {
-  Container,
-  Image,
-  Name,
-  Specifications,
-  Flag,
-  Details,
-  Description,
-  DescriptionTitle,
-  Comment,
-  AddCartContainer,
-  Label,
-  Prices,
-  Discount,
-  PriceMember,
-  PriceNonMember,
-  Buttom,
-  ButtomText,
-  LabelText,
-} from "./styles";
+import { formatToReal, limitText, percentage } from "../../../helpers";
+import * as Style from "./styles";
 
-import bottleImage from "../../../assets/img/bottle.png";
-import flagImage from "../../../assets/img/flag.png";
+import { ProducFullContentProps } from "./types";
 
-export function ProductFullContent() {
+export function ProductFullContent(props: ProducFullContentProps) {
   return (
-    <Container>
-      <Image source={bottleImage} />
-      <Name>Apothic Red 2019</Name>
-      <Specifications>
-        <Flag source={flagImage} />
-        <Details>Estados Unidos</Details>
-        <Details>Tinto Meio Seco</Details>
-        <Details>750 ml</Details>
-      </Specifications>
-      <Description>
-        <DescriptionTitle>Descrição</DescriptionTitle>
-        <Comment>
-          Produzido no terroir californiano, esse tinto mescla as variedades
-          Zinfandel, Syrah, Cabernet Sauvignon e Merlot. Apothic é um vinho
-          inspirado nas antigas Apothecas (adegas subterrâneas), um lugar
-          misterioso onde há mais de 800 anos os viticultores misturavam e
-          armazenavam seus cobiçados vinhos.
-        </Comment>
-      </Description>
-      <AddCartContainer elevation={5}>
-        <Label>
-          <LabelText>15% OFF</LabelText>
-        </Label>
-        <Prices>
-          <Discount>R$ 30.007,40</Discount>
-          <PriceMember>R$ 28.000,00</PriceMember>
-          <PriceNonMember>preço não-sócio R$ 29.999,90</PriceNonMember>
-        </Prices>
+    <Style.Container>
+      <Style.Image source={{ uri: props.image }} />
+      <Style.Name>{props.name}</Style.Name>
+      <Style.Specifications>
+        <Style.Flag source={{ uri: props.flag }} />
+        <Style.Details>{props.country}</Style.Details>
+        <Style.Details>{props.type}</Style.Details>
+        <Style.Details>{props.classification}</Style.Details>
+        <Style.Details>{props.volume}</Style.Details>
+      </Style.Specifications>
+      <Style.Description>
+        <Style.DescriptionTitle>Descrição</Style.DescriptionTitle>
+        <Style.Comment>
+          {limitText(props.sommelierComment, 400, false)}
+        </Style.Comment>
+      </Style.Description>
+      <Style.AddCartContainer elevation={5}>
+        <Style.Label>
+          <Style.LabelText>
+            {percentage(props.discount, props.price)}% OFF
+          </Style.LabelText>
+        </Style.Label>
+        <Style.Prices>
+          <Style.Discount>R$ {formatToReal(props.price)}</Style.Discount>
+          <Style.PriceMember>
+            R$ {formatToReal(props.priceMember)}
+          </Style.PriceMember>
+          <Style.PriceNonMember>
+            preço não-sócio R$ {formatToReal(props.priceNonMember)}
+          </Style.PriceNonMember>
+        </Style.Prices>
 
-        <Buttom activeOpacity={0.7}>
-          <ButtomText>Adicionar</ButtomText>
-        </Buttom>
-      </AddCartContainer>
-    </Container>
+        <Style.Buttom activeOpacity={0.7}>
+          <Style.ButtomText>Adicionar</Style.ButtomText>
+        </Style.Buttom>
+      </Style.AddCartContainer>
+    </Style.Container>
   );
 }

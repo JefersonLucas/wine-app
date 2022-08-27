@@ -1,48 +1,57 @@
-import {
-  Container,
-  Content,
-  Discount,
-  Image,
-  Name,
-  Prices,
-  Label,
-  LabelText,
-  Row,
-  PriceNonMember,
-  PriceMember,
-  SimpleText,
-  Buttom,
-  ButtomText,
-  Stamp,
-} from "./styles";
+import { useNavigation } from "@react-navigation/native";
 
-import bottleImage from "../../../assets/img/bottle-2.png";
+import * as Style from "./styles";
+
+import { ProductProps } from "./types";
+
 import stampImage from "../../../assets/img/stamp.png";
 
-export function ProductContent() {
+import { formatToReal, percentage } from "../../../helpers";
+
+export function ProductContent({
+  id,
+  name,
+  image,
+  price,
+  discount,
+  priceMember,
+  priceNonMember,
+}: ProductProps) {
+  const navigation = useNavigation();
+
+  function openScreen() {
+    navigation.navigate("product", { id: id });
+  }
+
   return (
-    <Container>
-      <Content elevation={5}>
-        <Image source={bottleImage} />
-        <Stamp source={stampImage} />
-        <Name>Toro Loco D.O.P. Utiel-Requena Tempranillo 2017</Name>
-        <Prices>
-          <Row>
-            <Discount>R$ 37,40</Discount>
-            <Label>
-              <LabelText>15% OFF</LabelText>
-            </Label>
-          </Row>
-          <Row>
-            <SimpleText>Sócio wine</SimpleText>
-            <PriceMember>R$ 30,00</PriceMember>
-          </Row>
-          <PriceNonMember>Não sócio R$ 37,40</PriceNonMember>
-        </Prices>
-      </Content>
-      <Buttom activeOpacity={0.7}>
-        <ButtomText>Adicionar</ButtomText>
-      </Buttom>
-    </Container>
+    <Style.Container>
+      <Style.Content elevation={5}>
+        <Style.Image source={{ uri: image }} />
+        <Style.Stamp source={stampImage} />
+        <Style.Name>{name}</Style.Name>
+        <Style.Prices>
+          <Style.Row>
+            <Style.Discount>R$ {formatToReal(price)}</Style.Discount>
+            <Style.Label>
+              <Style.LabelText>
+                {percentage(discount, price)}% OFF
+              </Style.LabelText>
+            </Style.Label>
+          </Style.Row>
+          <Style.Row>
+            <Style.SimpleText>Sócio wine</Style.SimpleText>
+            <Style.PriceMember>
+              R$ {formatToReal(priceMember)}
+            </Style.PriceMember>
+          </Style.Row>
+          <Style.PriceNonMember>
+            Não sócio R$ {formatToReal(priceNonMember)}
+          </Style.PriceNonMember>
+        </Style.Prices>
+      </Style.Content>
+      <Style.Buttom activeOpacity={0.7} onPress={openScreen}>
+        <Style.ButtomText>Adicionar</Style.ButtomText>
+      </Style.Buttom>
+    </Style.Container>
   );
 }
