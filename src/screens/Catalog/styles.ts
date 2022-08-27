@@ -1,6 +1,8 @@
 import styled from "styled-components/native";
 import { FlatList, FlatListProps } from "react-native";
 
+import { ProductProps } from "../../components/Products/ProductContent/types";
+
 export const Container = styled.View`
   flex: 1;
   background-color: ${({ theme }) => theme.colors.background.secondary};
@@ -27,7 +29,7 @@ export const FoundProducts = styled.Text`
   margin: 24px 0 12px;
 `;
 
-export const Filter = styled.TextInput`
+export const InputFilter = styled.TextInput`
   width: 100%;
   height: 40px;
   background-color: ${({ theme }) => theme.colors.background.primary};
@@ -49,7 +51,7 @@ export const ListContainer = styled.View`
 `;
 
 // prettier-ignore
-export const List = styled(FlatList as new (props: FlatListProps<number>) => FlatList<number>)`
+export const List = styled(FlatList as new (props: FlatListProps<ProductProps>) => FlatList<ProductProps>)`
   width: 100%;
   padding: 20px;
 `;
