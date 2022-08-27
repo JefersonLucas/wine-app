@@ -49,7 +49,7 @@ export const ListContainer = styled.View`
 `;
 
 // prettier-ignore
-export const List = styled(FlatList as new (props: FlatListProps<string>) => FlatList<string>)`
+export const List = styled(FlatList as new (props: FlatListProps<number>) => FlatList<number>)`
   width: 100%;
   padding: 20px;
 `;

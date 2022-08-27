@@ -12,7 +12,7 @@ import { ProductContent } from "../../components/Products/ProductContent";
 import { Header } from "../../components/Header";
 import { useTheme } from "styled-components";
 
-const data = ["1", "2", "3", "4"];
+const data = [1, 2, 3, 4];
 
 export function Catalog() {
   const theme = useTheme();
@@ -36,7 +36,7 @@ export function Catalog() {
         <ListContainer>
           <List
             data={data}
-            keyExtractor={(item) => item}
+            keyExtractor={(item) => item.toString()}
             renderItem={({ item }) => <ProductContent id={item} />}
             numColumns={2}
           />
