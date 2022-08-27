@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 export const Container = styled.View`
   align-items: center;
   justify-content: space-between;
-  margin: 20px 10px;
+  margin: 0px auto 40px auto;
 `;
 
 export const Content = styled.View`
