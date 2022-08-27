@@ -1,4 +1,4 @@
-import { Container, Content, Filter, FoundProducts } from "./styles";
+import { Container, Content, Filter, FoundProducts, List } from "./styles";
 
 import { ProductContent } from "../../components/Products/ProductContent";
 import { Header } from "../../components/Header";
@@ -15,7 +15,12 @@ export function Catalog() {
           selectionColor={theme.colors.text.wine}
         />
         <FoundProducts>45 produtos encontrados</FoundProducts>
-        <ProductContent />
+        <List
+          data={["1", "2", "3", "4"]}
+          keyExtractor={(item) => item}
+          renderItem={() => <ProductContent />}
+          numColumns={2}
+        />
       </Content>
     </Container>
   );
