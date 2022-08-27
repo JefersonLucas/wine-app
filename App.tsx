@@ -7,7 +7,7 @@ import {
   Lato_300Light,
 } from "@expo-google-fonts/lato";
 
-import { Catalog } from "./src/screens/Catalog";
+import { Routes } from "./src/routes";
 
 import { ThemeProvider } from "styled-components/native";
 import theme from "./src/theme";
@@ -25,8 +25,8 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <StatusBar style="dark" translucent backgroundColor="transparent" />
-      <Catalog />
+      <StatusBar style="auto" translucent backgroundColor="transparent" />
+      <Routes />
     </ThemeProvider>
   );
 }
