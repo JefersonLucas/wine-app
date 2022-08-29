@@ -55,3 +55,10 @@ export const List = styled(FlatList as new (props: FlatListProps<ProductProps>) 
   width: 100%;
   padding: 20px;
 `;
+
+export const LoadContainer = styled.View`
+  flex: 1;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+`;
