@@ -4,9 +4,9 @@ import * as Style from "./styles";
 
 import { ProductProps } from "./types";
 
-import stampImage from "../../../assets/img/stamp.png";
+import stampImage from "@assets/img/stamp.png";
 
-import { formatToReal, percentage } from "../../../helpers";
+import { formatToReal, percentage } from "@helpers/index";
 
 export function ProductContent({
   id,

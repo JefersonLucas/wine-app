@@ -2,12 +2,12 @@ import { useState } from "react";
 
 import * as Style from "./styles";
 
-import { ProductContent } from "../../components/Products/ProductContent";
-import { Header } from "../../components/Header";
-import { Load } from "../../components/Load";
-import { ProductProps } from "../../components/Products/ProductContent/types";
+import { ProductContent } from "@components/Products/ProductContent";
+import { Header } from "@components/Header";
+import { Load } from "@components/Load";
+import { ProductProps } from "@components/Products/ProductContent/types";
 
-import { useFetch } from "../../hooks/useFetch";
+import { useFetch } from "@hooks/useFetch";
 
 export function Catalog() {
   const [name, setName] = useState("");

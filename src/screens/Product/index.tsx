@@ -1,13 +1,13 @@
 import { useRoute } from "@react-navigation/native";
 
-import { Header } from "../../components/Header";
-import { ProductFullContent } from "../../components/Products/ProductFullContent";
-import { ProducFullContentProps } from "../../components/Products/ProductFullContent/types";
-import { Load } from "../../components/Load";
+import { Header } from "@components/Header";
+import { ProductFullContent } from "@components/Products/ProductFullContent";
+import { ProducFullContentProps } from "@components/Products/ProductFullContent/types";
+import { Load } from "@components/Load";
 
 import { Container, Content, LoadContainer } from "./styles";
 
-import { useFetch } from "../../hooks/useFetch";
+import { useFetch } from "@hooks/useFetch";
 
 type ParamsProps = {
   id: number;
