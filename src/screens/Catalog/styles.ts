@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { FlatList, FlatListProps } from "react-native";
+import { FlatList, FlatListProps, TextInputProps } from "react-native";
 
 import { ProductProps } from "../../components/Products/ProductContent/types";
 
@@ -29,7 +29,11 @@ export const FoundProducts = styled.Text`
   margin: 24px 0 12px;
 `;
 
-export const InputFilter = styled.TextInput`
+export const InputFilter = styled.TextInput.attrs<TextInputProps>(
+  ({ theme }) => ({
+    selectionColor: theme.colors.text.wine,
+  }),
+)`
   width: 100%;
   height: 40px;
   background-color: ${({ theme }) => theme.colors.background.primary};
