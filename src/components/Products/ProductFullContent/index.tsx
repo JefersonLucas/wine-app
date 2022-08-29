@@ -1,4 +1,4 @@
-import { formatToReal, limitText, percentage } from "../../../helpers";
+import { formatToReal, limitText, percentage } from "@helpers/index";
 import * as Style from "./styles";
 
 import { ProducFullContentProps } from "./types";
