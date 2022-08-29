@@ -1,5 +1,7 @@
 # Wine app
 
+![Wine logo](https://res.cloudinary.com/postman/image/upload/t_team_logo_pubdoc/v1/team/5ff7821aac23578d4a239903ed1b2637cf840e685f6d1232dc47a7b81482cde3)
+
 ## About
 
 This project is a mobile application for an e-commerce for selling wines.
@@ -38,8 +40,26 @@ $ yarn start
 3. [x] Style it with styled-components;
 4. [ ] Use local storage to manage the cart;
 5. [x] Please include the project installation instructions in the README;
-6. [ ] Feel free to include any observations;
-7. [ ] Consume our [Rest API][06];
+6. [x] Feel free to include any observations;
+7. [x] Consume our [Rest API][06];
+
+## Stacks
+
+- Axios: `0.27.2`;
+- Expo: `46.0.9`;
+- Expo font: `10.2.0`;
+- Git: `2.28.0`;
+- Git Flow: `1.12.3`;
+- Node.js: `16.13.2`;
+- React: `18.0.0`;
+- React native: `0.69.4`;
+- React navigation native: `6.0.12`;
+- React navigation native stack: `6.8.0`;
+- Styled components: `5.3.5`;
+- TypeScript: `4.3.5`;
+- Yarn: `1.22.5`.
+
+See more in the [package.json](package.json) file.
 
 ---
 
