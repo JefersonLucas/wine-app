@@ -10,6 +10,7 @@ import {
 import { Routes } from "./src/routes";
 
 import { ThemeProvider } from "styled-components/native";
+import Toast from "react-native-toast-message";
 import theme from "./src/theme";
 
 export default function App() {
@@ -27,6 +28,7 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <StatusBar style="auto" translucent backgroundColor="transparent" />
       <Routes />
+      <Toast />
     </ThemeProvider>
   );
 }
