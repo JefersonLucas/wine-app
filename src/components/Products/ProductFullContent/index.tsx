@@ -1,9 +1,43 @@
-import { formatToReal, limitText, percentage } from "@helpers/index";
-import * as Style from "./styles";
+import { useAsyncStorage } from "@react-native-async-storage/async-storage";
+import Toast from "react-native-toast-message";
 
+import { formatToReal, limitText, percentage } from "@helpers/index";
+
+import * as Style from "./styles";
 import { ProducFullContentProps } from "./types";
 
 export function ProductFullContent(props: ProducFullContentProps) {
+  const { getItem, setItem } = useAsyncStorage("@wine-app:cart");
+
+  async function handleAddCart() {
+    try {
+      const newItem = {
+        id: props.id,
+        name: props.name,
+      };
+
+      const response = await getItem();
+
+      const presviousItems = response ? JSON.parse(response) : [];
+
+      const data = [...presviousItems, newItem];
+
+      await setItem(JSON.stringify(data));
+
+      Toast.show({
+        type: "success",
+        text1: "Item adicionado ao carrinho!",
+      });
+    } catch (error) {
+      console.log(error);
+
+      Toast.show({
+        type: "error",
+        text1: "Não foi possível adicionar ao carrinho.",
+      });
+    }
+  }
+
   return (
     <Style.Container>
       <Style.Image source={{ uri: props.image }} />
@@ -37,7 +71,7 @@ export function ProductFullContent(props: ProducFullContentProps) {
           </Style.PriceNonMember>
         </Style.Prices>
 
-        <Style.Buttom activeOpacity={0.7}>
+        <Style.Buttom activeOpacity={0.7} onPress={handleAddCart}>
           <Style.ButtomText>Adicionar</Style.ButtomText>
         </Style.Buttom>
       </Style.AddCartContainer>

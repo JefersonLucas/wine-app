@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
-import * as Style from "./styles";
+import { useAsyncStorage } from "@react-native-async-storage/async-storage";
+import { useFocusEffect } from "@react-navigation/native";
 
 import { ProductContent } from "@components/Products/ProductContent";
 import { Header } from "@components/Header";
@@ -9,8 +10,30 @@ import { ProductProps } from "@components/Products/ProductContent/types";
 
 import { useFetch } from "@hooks/useFetch";
 
+import * as Style from "./styles";
+
+type CartProps = {
+  id: number;
+  name: string;
+};
+
 export function Catalog() {
+  const { getItem } = useAsyncStorage("@wine-app:cart");
+
   const [name, setName] = useState("");
+  const [cart, setCart] = useState<CartProps[]>([]);
+
+  async function handleFetchCart() {
+    const response = await getItem();
+    const carts = response ? JSON.parse(response) : [];
+    setCart(carts);
+  }
+
+  useFocusEffect(
+    useCallback(() => {
+      handleFetchCart();
+    }, []),
+  );
 
   const { data, isFetching } = useFetch<ProductProps[]>(
     "/products?page=1&limit=10",
@@ -22,7 +45,7 @@ export function Catalog() {
 
   return (
     <Style.Container>
-      <Header totalItems={0} isBackground isLogo elevation={5} />
+      <Header totalItems={cart.length} isBackground isLogo elevation={5} />
       {isFetching ? (
         <Style.LoadContainer>
           <Load />

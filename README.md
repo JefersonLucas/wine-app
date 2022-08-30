@@ -38,7 +38,7 @@ $ yarn start
 1. [x] Follow this [prototype][05];
 2. [x] Use Typescript;
 3. [x] Style it with styled-components;
-4. [ ] Use local storage to manage the cart;
+4. [x] Use local storage to manage the cart;
 5. [x] Please include the project installation instructions in the README;
 6. [x] Feel free to include any observations;
 7. [x] Consume our [Rest API][06];
@@ -47,6 +47,7 @@ $ yarn start
 
 - Axios: `0.27.2`;
 - Expo: `46.0.9`;
+- Expo AsyncStorage: `1.17.3`;
 - Expo font: `10.2.0`;
 - Git: `2.28.0`;
 - Git Flow: `1.12.3`;
